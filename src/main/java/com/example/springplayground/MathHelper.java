@@ -45,4 +45,8 @@ public class MathHelper {
         }
         return sum;
     }
+
+    public int volume(int x, int y, int z) {
+        return x * y * z;
+    }
 }

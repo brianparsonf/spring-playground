@@ -1,10 +1,7 @@
 package com.example.springplayground;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,8 +28,17 @@ public class MathController {
 
     @GetMapping("/sum")
     public String sum(
-            @RequestParam(value="n", required=false) List<Double> numbers
+            @RequestParam(value = "n", required = false) List<Double> numbers
     ) {
         return String.valueOf((int) mathHelper.sum(numbers));
+    }
+
+    @RequestMapping("/volume/{x}/{y}/{z}")
+    public String volume(
+            @PathVariable int x,
+            @PathVariable int y,
+            @PathVariable int z
+    ) {
+        return String.valueOf(mathHelper.volume(x, y, z));
     }
 }

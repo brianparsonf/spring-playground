@@ -46,5 +46,11 @@ class MathHelperTest {
         assertEquals(4.5, result);
     }
 
+    @HappyPathTest
+    @DisplayName("volume: get volume")
+    void volume_calculatesVolume() {
+        result = mathHelper.volume(3,4,5);
+        assertEquals(60, result);
+    }
 
 }

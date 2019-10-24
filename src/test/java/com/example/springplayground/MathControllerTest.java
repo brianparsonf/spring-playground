@@ -99,4 +99,10 @@ class MathControllerTest {
         request = get("/math/sum");
         mvc.perform(request).andExpect(status().isOk()).andExpect(content().string("0"));
     }
+
+    @HappyPathTest
+    void volume_getsVolume() throws Exception {
+        request = get("/math/volume/3/4/5");
+        mvc.perform(request).andExpect(status().isOk());
+    }
 }
